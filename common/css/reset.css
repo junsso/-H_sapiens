@@ -1,0 +1,68 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Pretendard','Malgun Gothic','sans-serif';
+    font-size: var(--font-size-base);
+    word-break: break-all;
+    color: var(--color-base);
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+body{
+    min-width: 320px;
+}
+
+p, ul, ol, h1, h2, h3, h4, h5, div{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, article, section, nav, aside, footer{
+    display: block;
+}
+ul, ol{
+    list-style: none;
+}
+input, select, button{
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: 'Pretendard','Malgun Gothic','sans-serif'; 
+    font-size: var(--font-size-base);
+    color: var(--color-base);
+}
+i, em, address{
+    font-style: normal;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+label, button, input[type=submit]{
+    cursor:pointer;
+    display: inline-block;
+}
+a, input, button{
+    border: 0 none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-family: 'Pretendard','Malgun Gothic','sans-serif'; 
+    font-size: var(--font-size-base);
+    color: var(--color-base);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:active, button:active, input:focus{
+    outline: none;
+}
+::placeholder{
+    color: var(--color-guide);
+    font-weight: 400;
+}

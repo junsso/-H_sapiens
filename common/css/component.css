@@ -1,0 +1,65 @@
+
+:root{
+    /*color*/
+    --color-base: #262626;
+    --color-black: #000000;
+    --color-guide: #A3A3A3;
+    --color-border: #E4E4E4;
+    --swiper-bullet-color: #D9D9D9;
+    --swiper-bullet-active-color: #757575;
+    /*size*/
+    --font-size-base: 16px;
+    --font-size-12: 0.75rem;
+    --font-size-13: 0.813rem;
+    --font-size-14: 0.875rem;
+    --font-size-15: 0.938rem;
+    --font-size-16: 1rem;
+    --font-size-17: 1.063rem;
+    --font-size-18: 1.125rem;
+    --font-size-19: 1.188rem;
+    --font-size-20: 1.25rem;
+    --font-size-21: 1.313rem;
+    --font-size-22: 1.375rem;
+    --font-size-36: 2.25rem;
+    --font-size-40: 2.5rem;
+    --font-size-48: 3rem;
+    /*bgColor*/
+    --bg-color-base: #fff;
+    --bg-color-skyblue: #7ECBFF;
+    --bg-color-skyblue2: #0093F6;
+    --bg-color-yellow: #FFE900;
+    --bg-color-gray: #7F7F7F;
+    --bg-color-product : #F9F9F9;
+
+    --transition-base : 0.5s all cubic-bezier(0,.48,.71,1.01);
+
+}
+.wrapper{
+    max-width: 1180px;
+    margin: 0  auto;
+}
+.btn{
+    display: inline-block;
+    background-color: var(--color-black);
+    border-radius: 8px;
+    font-size: var(--font-size-13);
+    font-weight: 500;
+    color: var(--bg-color-base);
+    padding: 0 17px;
+    min-height: 34px;
+    line-height: 34px;
+    box-sizing: border-box;
+}
+.btn.md{
+    font-size: var(--font-size-14);
+    font-weight: 700;
+    min-height: 42px;
+    line-height: 42px;
+}
+
+.color-gradient {
+    background: linear-gradient(90deg, #FFB4BA 0%, #7ECBFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
