@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+    <title>H사피엔스</title>
+
+    <link rel="stylesheet" href="/common/css/import.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container" style="padding: 100px;">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/img_main_visual.png" alt="">
+                    <div class="tooltip">
+                        툴팁이다
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <style>
+        .container { position: relative;}
+        .swiper { background-color: blanchedalmond; position: relative;}
+        .swiper-slide { position: relative;}
+        .swiper-slide.active .tooltip { display: block;}
+        .tooltip { display: none; position: absolute; bottom: 10%; left: 50%; z-index: 2; min-width: 344px; height: 50px; background-color: pink;}
+        .swiper-slide:hover .tooltip { display: block;}
+        .swiper-button-prev, .swiper-button-next { top: auto; bottom: -10%;}
+    </style>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
+    <script src="/common/js/ui.js"></script>
+
+    <script>
+        var swiper = new Swiper('.container .swiper', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        $(document).ready(function() {
+            $('.swiper-slide').on('mouseenter', function(event) {
+                const $item = $(this);
+                const $tooltip = $item.find('.tooltip');
+                const $swiperContainer = $('.swiper');
+
+                $currentTooltip = $tooltip; // 현재 툴팁 저장
+
+                // 툴팁을 슬라이드 밖으로 이동
+                $swiperContainer.append($tooltip);
+
+                // 툴팁의 위치를 동적으로 조정
+                const itemRect = $item[0].getBoundingClientRect();
+                const containerRect = $swiperContainer[0].getBoundingClientRect();
+                const tooltipTop = itemRect.top - containerRect.top;
+                let tooltipLeft = itemRect.left - containerRect.left + itemRect.width * 0.1; // left: 10% 계산
+
+                // 툴팁이 컨테이너를 넘어가는지 확인
+                const tooltipRight = tooltipLeft + $tooltip.outerWidth();
+                if (tooltipRight > containerRect.width) {
+                tooltipLeft = containerRect.width - $tooltip.outerWidth();
+                }
+
+                $tooltip.css({
+                    top: tooltipTop + 'px',
+                    left: tooltipLeft + 'px',
+                    display: 'block'
+                });
+
+                console.log('mouseenter triggered'); // 로그 추가
+            });
+
+            $('.swiper-slide').on('mouseleave', function(event) {
+                if ($currentTooltip) {
+                    const $item = $(this);
+
+                    // 툴팁을 다시 슬라이드 안으로 이동하고 숨기기
+                    console.log('mouseleave triggered'); // 로그 추가
+                    console.log('Before append:', $currentTooltip[0]); // 로그 추가
+                    $item.append($currentTooltip);
+                    console.log('After append:', $currentTooltip[0]); // 로그 추가
+                    $currentTooltip.css({
+                        display: 'none',
+                        top: '',
+                        left: ''
+                    });
+                    console.log('After hiding tooltip:', $currentTooltip[0]); // 로그 추가
+
+                    $currentTooltip = null; // 현재 툴팁 초기화
+                }
+            });
+        });
+
+    
+    </script>
+</body>
+</html>
