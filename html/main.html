@@ -12,20 +12,20 @@
     <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
     <title>H사피엔스</title>
 
-    <link rel="stylesheet" href="/common/css/import.css"/>
+    <link rel="stylesheet" href="../common/css/import.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.css"/>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="floating">
         <ul class="list">
             <li class="members">
                 <a href="#">에싸 멤버십</a>
-                <div class="description">
+                <div class="description"  name="popup1">
                     <p><span class="color-gradient">에싸 멤버십</span>에 가입하여 다양한 혜택을 받아보세요</p>
-                    <i class="close"></i>
+                    <input type="checkbox" name="today_close1" id="today_close1">
+                    <label for="today_close1" class="close"></label>
                 </div>
             </li>
             <li class="event toggle">
@@ -46,37 +46,76 @@
             </li>
         </ul>
     </div>
+
     <main class="main">
         <div class="top-banner">
             <a href="#"><p>H사피엔스 멤버십 회원 '에싸'를 위한 <strong>첫 구매 10,000원 쿠폰팩</strong></p></a>
         </div>
-        <div class="kv-wrap">
+        <div class="gnb-wrap">
+            <div class="hamburger">
+                <input type="checkbox" name="toggleCheck">
+                <div class="bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <header>
-                <a href="#"><img src="/image/ico_H_logo.svg" alt=""></a>
-                <ul class="menu">
-                    <li><a href="#">H사피엔스</a></li>
-                    <li><a href="#">헬퓨</a></li>
-                    <li><a href="#">공후하</a></li>
-                    <li>
-                        <a href="#">
-                            멤버십
-                            <div class="tool-tip">
-                                <div class="inner">
-                                    <span>멤버십에 가입하고<br>다양한 혜택을 받아보세요</span>
+                <a href="#"><img src="../image/ico_H_logo.svg" alt=""></a>
+                <div class="header-menu-box">
+                    <ul class="header-menu">
+                        <li><a href="#">H사피엔스</a></li>
+                        <li><a href="#">헬퓨</a></li>
+                        <li><a href="#">공후하</a></li>
+                        <li>
+                            <a href="#">
+                                멤버십
+                                <div class="tool-tip">
+                                    <div class="inner">
+                                        <span>멤버십에 가입하고<br>다양한 혜택을 받아보세요</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li><a href="#">커뮤니티</a></li>
-                </ul>
+                            </a>
+                        </li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
                 <ul class="sub-menu">
-                    <li><a href="#"><i class="ico search"></i></a></li>
+                    <li class="search"><a href="#"><i class="ico search"></i></a></li>
                     <li><a href="#"><i class="ico my"></i></a></li>
                     <li><a href="#"><i class="ico cart"></i></a></li>
-                    <li><a href="#"><i class="ico globe"></i>KO</a></li>
-                    <li><a href="#"><i class="ico location"></i>매장안내</a></li>
+                    <li><a href="#"><i class="ico globe"></i><span>KO</span></a></li>
+                    <li><a href="#"><i class="ico location"></i><span>매장안내</span></a></li>
                 </ul>
             </header>
+            <div class="search-box">
+                <div class="bg"></div>
+                <div class="box">
+                    <div class="inner">
+                        <div class="form-wrap">
+                            <input type="text" name="q" value="" id="sch_str" class="input" required="">
+                            <button type="submit" class="search-btn"><span class="search"></span></button>
+                        </div>                                
+                        <div class="hash-tag mg-top-20">
+                            <h4>추천 검색어</h4>
+                            <div class="tag-box mg-top-20">
+                                <a href="/shop/1624346854">#스킨</a>
+                                <a href="/shop/1624432492">#로션</a>
+                                <a href="/shop/1625119914">#미스트</a>
+                                <a href="/shop/list-1010">#에센스</a>
+                                <a href="/shop/list-1020">#마스크팩</a>
+                                <a href="/shop/1624346854">#스킨</a>
+                                <a href="/shop/1624432492">#로션</a>
+                                <a href="/shop/1625119914">#미스트</a>
+                                <a href="/shop/list-1010">#에센스</a>
+                                <a href="/shop/list-1020">#마스크팩</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kv-wrap">
             <div class="kv-etc">
                 <span>Human</span>
                 <span>Health</span>
@@ -100,9 +139,9 @@
                                         <p>4050 부모님 선물로 추천해요</p>
                                     </div>
                                     <div class="list-box">
-                                        <div><img src="/image/img_product1.png" alt=""></div>
-                                        <div><img src="/image/img_product2.png" alt=""></div>
-                                        <div><img src="/image/img_product3.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product1.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product2.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product3.png" alt=""></div>
                                     </div>
                                 </a>
                             </div>
@@ -113,9 +152,9 @@
                                         <p>4050 부모님 선물로 추천해요</p>
                                     </div>
                                     <div class="list-box">
-                                        <div><img src="/image/img_product1.png" alt=""></div>
-                                        <div><img src="/image/img_product2.png" alt=""></div>
-                                        <div><img src="/image/img_product3.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product1.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product2.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product3.png" alt=""></div>
                                     </div>
                                 </a>
                             </div>
@@ -126,9 +165,9 @@
                                         <p>4050 부모님 선물로 추천해요</p>
                                     </div>
                                     <div class="list-box">
-                                        <div><img src="/image/img_product1.png" alt=""></div>
-                                        <div><img src="/image/img_product2.png" alt=""></div>
-                                        <div><img src="/image/img_product3.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product1.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product2.png" alt=""></div>
+                                        <div class="img-wrap"><img src="../image/temp/img_product3.png" alt=""></div>
                                     </div>
                                 </a>
                             </div>
@@ -142,13 +181,13 @@
             </div>
         </div>
         <div class="main-banner-wrap">
-            <div class="inner">
+            <a href="#" class="inner">
                 <h2>
                     <p class="color-gradient">에싸 멤버십</p>
                     <span>H사피엔스 멤버십으로 풍부한 혜택을 받아보세요.</span>
                 </h2>
-                <a href="#" class="btn md">더 알아보기</a>
-            </div>
+                <button type="button" class="btn md">더 알아보기</button>
+            </a>
         </div>
     </main>
 
@@ -159,25 +198,25 @@
                     <ul>
                         <li class="members">
                             <a href="#">
-                                <p class="img-wrap"><img src="/image/ico_brand_logo_hc.svg" alt=""></p>
+                                <p class="img-box"><img src="../image/ico_brand_logo_hc.svg" alt=""></p>
                                 <span>멤버십</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <p class="img-wrap"><img src="/image/ico_brand_logo_h.svg" alt=""></p>
+                                <p class="img-box"><img src="../image/ico_brand_logo_h.svg" alt=""></p>
                                 <span>H사피엔스</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <p class="img-wrap"><img src="/image/ico_brand_logo_hf.svg" alt=""></p>
+                                <p class="img-box"><img src="../image/ico_brand_logo_hf.svg" alt=""></p>
                                 <span>헬퓨</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <p class="img-wrap"><img src="/image/ico_brand_logo_gong.svg" alt=""></p>
+                                <p class="img-box"><img src="../image/ico_brand_logo_gong.svg" alt=""></p>
                                 <span>공후화</span>
                             </a>
                         </li>
@@ -187,38 +226,38 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner1.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner1.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner2.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner2.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner3.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner1.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner2.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner2.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner3.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner1.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner1.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner2.png" alt="">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#" class="product-wrap">
-                                    <img src="/image/img_ev_banner2.png" alt="">
+                                <a href="#" class="img-wrap">
+                                    <img src="../image/temp/img_ev_banner1.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -231,8 +270,8 @@
                     <div class="product-list-wrap">
                         <ul class="list">
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct1.png" alt=""></div>
+                                <a href="#" class="product" title="바이오 셀룰로오스크 마스크팩 (10매입)">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct1.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>바이오 셀룰로오스크 마스크팩 (10매입)</h3>
@@ -241,15 +280,15 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct2.png" alt=""></div>
+                                <a href="#" class="product" title="인크리즈드 뉴트리션 크림 50g">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct2.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>인크리즈드 뉴트리션 크림 50g </h3>
@@ -258,15 +297,15 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct3.png" alt=""></div>
+                                <a href="#" class="product" title="코엔자임Q10 코큐텐 (1병/1개월분)">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct3.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
@@ -275,15 +314,15 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct4.png" alt=""></div>
+                                <a href="#" class="product" title="코엔자임Q10 코큐텐 (1병/1개월분)">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct4.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
@@ -292,15 +331,15 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct5.png" alt=""></div>
+                                <a href="#" class="product" title="코엔자임Q10 코큐텐 (1병/1개월분)">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct5.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
@@ -309,15 +348,15 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="product">
-                                    <div class="img-wrap"><img src="/image/img_list_poduct6.png" alt=""></div>
+                                <a href="#" class="product" title="코엔자임Q10 코큐텐 (1병/1개월분)">
+                                    <div class="img-wrap"><img src="../image/temp/img_list_poduct6.png" alt=""></div>
                                     <div class="desc-box">
                                         <span class="sm-desc">공후하</span>
                                         <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
@@ -326,7 +365,7 @@
                                             <span class="best">인기</span>
                                         </div>
                                         <div class="price">
-                                            <strong>66,000원</strong>
+                                            <p class="value">66,000원</p>
                                             <span>99,000원</span>
                                         </div>
                                     </div>
@@ -337,9 +376,9 @@
                 </div>
             </div>
         </section>
+
         <section class="main-brand">
             <div class="brand-movie">
-                <div class="img-wrap"><img src="/image/img_main_brand_bg.png" alt=""></div>
                 <div class="desc-box">
                     <h2>
                         사포닌 과학의 진화와 기술 혁신을 선도하며<br>
@@ -350,24 +389,707 @@
             </div>
             <div class="flagship">
                 <div class="col main-col">
-                    <img src="/image/img_main_flagship_bg.png" alt="">
-                    <div class="desc-box">
-                        <h2>명동 H사피엔스 플래그십</h2>
-                        <span>Lorem Ipsum is simply dummy text of the printing and type</span>
-                        <a href="#" class="link-btn">매장 안내 바로가기</a>
+                    <a href="#">
+                        <div class="img-wrap"><img src="../image/temp/img_main_flagship_bg.png" alt=""></div>
+                        <div class="desc-box">
+                            <h2>명동 H사피엔스 플래그십</h2>
+                            <span>Lorem Ipsum is simply dummy text of the printing and type</span>
+                            <button type="button" class="link-btn">매장 안내 바로가기</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col sub-col">
+                    <div class="section-info">
+                        <em class="sm-desc">매장 안내</em>
+                        <h2 class="section-title">플래그십 탐험하기</h2>
+                        <span class="desc">명동 H사피엔스 플래그십에서 홍삼과학의 오감을 체험해보세요.</span>
+                    </div>
+                    <div class="flag-layout">
+                        <div class="grid">
+                            <div class="grid-sizer"></div>
+                            <div class="grid-item">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo1.png" alt=""></div>
+                            </div>
+                            <div class="grid-item down">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo2.png" alt=""></div>
+                            </div>
+                            <div class="grid-item down2">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo3.png" alt=""></div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo4.png" alt=""></div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo6.png" alt=""></div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="img-wrap"><img src="../image/temp/img_flag_photo5.png" alt=""></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col sub-col"></div>
             </div>
         </section>
 
-        <footer style="height: 200px; background-color: pink;">
-    
+        <section class="main-line-up">
+            <div class="wrapper">
+                <h2 class="section-title">브랜드 라인업 살펴보기</h2>
+                <div class="ui-tab">
+                    <div class="tab">
+                        <ul>
+                            <li class="current"><input type="radio" name="item" checked><label>공후하</label></li>
+                            <li><input type="radio" name="item"><label>H사피엔스</label></li>
+                            <li><input type="radio" name="item"><label>헬퓨</label></li>
+                        </ul>
+                    </div>
+                    <div class="tab-conts">
+                        <div class="pro-item">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide product-list-wrap">
+                                        <a href="#;" class="product row" title="코엔자임Q10 코큐텐 (1병/1개월분)">
+                                            <div class="img-wrap">
+                                                <span class="rank first">1</span>
+                                                <img src="../image/temp/img_list_poduct1.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide product-list-wrap">
+                                        <a href="#;" class="product row" title="인크리즈드 3종 SET">
+                                            <div class="img-wrap">
+                                                <span class="rank">2</span>
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide product-list-wrap">
+                                        <a href="#;" class="product row" title="인크리즈드 뉴트리션 크림 50g ">
+                                            <div class="img-wrap">
+                                                <span class="rank">3</span>
+                                                <img src="../image/temp/img_product_80x80_3.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 뉴트리션 크림 50g </h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper mySwiper2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product-list-wrap type-a">
+                                            <div class="list">
+                                                <div class="product row">
+                                                    <div class="img-wrap">
+                                                        <span class="rank first">1</span>
+                                                        <img src="../image/temp/img_list_poduct1.png" alt="">
+                                                    </div> 
+                                                    <div class="desc-box">
+                                                        <span class="sm-desc">공후하</span>
+                                                        <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
+                                                        <div class="label">
+                                                            <span class="free">무료배송</span>
+                                                            <span class="best">인기</span>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span>기존가 99,000원</span>
+                                                            <p class="value"><em>예상 할인가</em>66,000원</p>
+                                                        </div>
+                                                        <div class="shop-box">
+                                                            <a href="#" class="btn cart"></a>
+                                                            <a href="#" class="btn buy">구매하기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product-list-wrap type-a">
+                                            <div class="list">
+                                                <div class="product row">
+                                                    <div class="img-wrap">
+                                                        <span class="rank">2</span>
+                                                        <img src="../image/temp/img_product_440x440.png" alt="">
+                                                    </div> 
+                                                    <div class="desc-box">
+                                                        <span class="sm-desc">공후하</span>
+                                                        <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
+                                                        <div class="label">
+                                                            <span class="free">무료배송</span>
+                                                            <span class="best">인기</span>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span>기존가 99,000원</span>
+                                                            <p class="value"><em>예상 할인가</em>66,000원</p>
+                                                        </div>
+                                                        <div class="shop-box">
+                                                            <a href="#" class="btn cart"></a>
+                                                            <a href="#" class="btn buy">구매하기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product-list-wrap type-a">
+                                            <div class="list">
+                                                <div class="product row">
+                                                    <div class="img-wrap">
+                                                        <span class="rank">3</span>
+                                                        <img src="../image/temp/img_list_poduct3.png" alt="">
+                                                    </div> 
+                                                    <div class="desc-box">
+                                                        <span class="sm-desc">공후하</span>
+                                                        <h3>코엔자임Q10 코큐텐 (1병/1개월분)</h3>
+                                                        <div class="label">
+                                                            <span class="free">무료배송</span>
+                                                            <span class="best">인기</span>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span>기존가 99,000원</span>
+                                                            <p class="value"><em>예상 할인가</em>66,000원</p>
+                                                        </div>
+                                                        <div class="shop-box">
+                                                            <a href="#" class="btn cart"></a>
+                                                            <a href="#" class="btn buy">구매하기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="indicator">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-memebership">
+            <div class="wrapper">
+                <div class="banner">
+                    <a href="#">
+                        <div class="desc-box">
+                            <p><span class="color-gradient">에싸 멤버십</span></p>
+                            <h2>에싸 멤버십 혜택</h2>
+                            <span>H.Sapience의 득 되는 멤버십 혜택을 알려드려요.</span>
+                            <button type="button" class="btn">이번달 나의 등급</button>
+                        </div>
+                        <div class="card">
+                            <span>Membership</span>
+                            <h2>Lv.1 Biginner</h2>
+                            <div class="desc">
+                                <em>이번달 혜택</em>
+                                <span>999+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-review">
+            <div class="wrapper">
+                <div class="section-info">
+                    <em class="sm-desc">제품 후기</em>
+                    <h2 class="section-title">생생한 고객님들의<br>제품 후기</h2>
+                    <a href="#" class="link-btn">제품 보러가기</a>
+                </div>
+                <div class="review-swipe">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo1.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide down">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo2.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo3.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide down2">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo4.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo2.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide down">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo3.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo4.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-list">
+                                    <div class="name">
+                                        <span class="id">sarangdungy***</span>
+                                        <div class="star">
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class="current"></span>
+                                            <span class=""></span>
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="ellipsis2">
+                                            가격 대비 성능이 훌륭해요. 제가 기대했던 것 이상으로 좋은 제품이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <img src="../image/temp/ico_review_photo1.png" alt="">
+                                    </div>
+                                    <div class="hover-box product-list-wrap">
+                                        <a href="#" class="product row">
+                                            <div class="img-wrap">
+                                                <img src="../image/temp/img_product_80x80_2.png" alt="">
+                                            </div>
+                                            <div class="desc-box">
+                                                <span class="sm-desc">공후하</span>
+                                                <h3>인크리즈드 3종 SET</h3>
+                                                <div class="price">
+                                                    <p class="value">66,000원</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-box">
+                                                <button type="button" class="btn">보러가기</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indicator">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-global">
+            <div class="wrapper">
+                <div class="section-info">
+                    <em class="sm-desc">글로벌 홍보</em>
+                    <h2 class="section-title">글로벌 프로젝트</h2>
+                    <span class="desc">전세계 1500만명이 기다려온 그녀의 이야기를 지금 확인해보세요.</span>
+                    <a href="#" class="link-btn">유튜브 채널 보러가기</a>
+                </div>
+                <div class="movie-wrap">
+                    <div class="list">
+                        <span class="sub-title">영상 리스트</span>
+                        <ul>
+                            <li class="current" data-index="0">
+                                <a href="#;">
+                                    <div class="img-wrap"><img src="https://img.youtube.com/vi/I6wac71iLXw/0.jpg" alt=""></div>
+                                    <p>엘리나가 전하는 우리가 만난 이유</p>
+                                    <span>30초</span>
+                                </a>
+                            </li>
+                            <li class="" data-index="1">
+                                <a href="#;">
+                                    <div class="img-wrap"><img src="https://img.youtube.com/vi/iIBlBIyP4Ms/0.jpg" alt=""></div>
+                                    <p>홍삼건 2023 캠페인 엄마의 여행편</p>
+                                    <span>30초</span>
+                                </a>
+                            </li>
+                            <li class="" data-index="2">
+                                <a href="#;">
+                                    <div class="img-wrap"><img src="https://img.youtube.com/vi/v_sGWqiBRrk/0.jpg" alt=""></div>
+                                    <p>홍삼음료의 세대 교체 홍삼 2뿌리 42.195</p>
+                                    <span>30초</span>
+                                </a>
+                            </li>
+                            <li class="" data-index="3">
+                                <a href="#;">
+                                    <div class="img-wrap"><img src="https://img.youtube.com/vi/I6wac71iLXw/0.jpg" alt=""></div>
+                                    <p>홍삼건 2023 캠페인 엄마의 여행편</p>
+                                    <span>30초</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont">
+                        <div class="current" id="video-0">
+                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/I6wac71iLXw?si=sw4KOAA3r1V0GBGb&amp;controls=0&amp;autoplay=1&amp;mute=1&loop=1&playlist=I6wac71iLXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="iframe"></iframe> -->
+                        </div>
+                        <!-- <div id="video-1">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iIBlBIyP4Ms?si=p0m6sOLP1x05NcJP&amp;controls=0&amp;autoplay=1&amp;mute=1&loop=1&playlist=iIBlBIyP4Ms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="video-2">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/v_sGWqiBRrk?si=IuRzD7OSN6AVLh-V&amp;controls=0&amp;autoplay=1&amp;mute=1&loop=1&playlist=v_sGWqiBRrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div id="video-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/I6wac71iLXw?si=sw4KOAA3r1V0GBGb&amp;controls=0&amp;autoplay=1&amp;mute=1&loop=1&playlist=I6wac71iLXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-service">
+            <div class="wrapper">
+                <div class="section-info">
+                    <em class="sm-desc">서비스</em>
+                    <h2 class="section-title">궁금한 점은 간편하게 문의해 보세요</h2>
+                    <span class="desc">
+                        상세한 제품상담과 전화주문이 필요하신가요?<br>
+                        H사피엔스 전문 상담사가 1:1 상담을 통해 전문적으로 관리 해드립니다.
+                    </span>
+                </div>
+                <div class="contact-box">
+                    <ul>
+                        <li>
+                            <span>전화문의</span>
+                            <strong>1600-4546</strong>
+                        </li>
+                        <li>
+                            <span>문의</span>
+                            <strong>Customer@btgin.com</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="wrapper">
+                <div class="footer-item">
+                    <div class="item">
+                        <ul class="list">
+                            <li><a href="#">H사피엔스 이용약관</a></li>
+                            <li><a href="#">개인정보취급방침</a></li>
+                            <li><a href="#">이메일무단수집거부</a></li>
+                            <li><a href="#">안전보건경영방침</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                        </ul>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    H사피엔스 고객센터&nbsp;<strong>1600-4546</strong>
+                                </li>
+                                <li>
+                                    신한은행&nbsp;<strong>100-028-892511</strong>&nbsp;| (주) 비티진
+                                </li>
+                                <li>
+                                    농협은행&nbsp;<strong>317-0010-4295-91</strong>&nbsp;| (주) 비티진
+                                </li>
+                                <li>
+                                    월요일 - 금요일 09:00 - 17:00 ㅣ 점심시간 12:00 - 13:00 (일요일, 공휴일 휴무)
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sns">
+                            <ul>
+                                <li><a href="#"><img src="../image/ico_instar.svg" alt=""></a></li>
+                                <li><a href="#"><img src="../image/ico_naver.svg" alt=""></a></li>
+                                <li><a href="#"><img src="../image/ico_facebook.svg" alt=""></a></li>
+                                <li><a href="#"><img src="../image/ico_youtube.svg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="company">
+                            <ul>
+                                <li>
+                                    H사피엔스 대표 : 허율 ㅣ 사업자등록번호 : 3058154583 ㅣ 통신판매업신고 : 2017-대전유성-0029 ㅣ <a href="#">사업자 정보 확인</a>
+                                </li>
+                                <li>사업장 소재지 :  대전광역시 유성구 테크노2로 125-6 (용산동) 34024 (주)비티진</li>
+                                <li>이메일: tax1@naver.com ㅣ 대표번호: 1600-4546</li>
+                                <li>COPYRIGHT ©2022 비티진몰. ALL RIGHTS RESERVED.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </section>
 
     
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
-    <script src="/common/js/ui.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="../common/js/ui.js"></script>
 </body>
 </html>

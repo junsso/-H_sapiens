@@ -12,143 +12,178 @@
     <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
     <title>H사피엔스</title>
 
-    <link rel="stylesheet" href="/common/css/import.css"/>
+    <link rel="stylesheet" href="../common/css/import.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.css"/>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <div class="container" style="padding: 100px;">
+    <div class="wrap">
         <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        Slide 1
+                        <div class="hover-box">Hover Box 1</div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
+                    <div class="swiper-slide">
+                        Slide 2
+                        <div class="hover-box">Hover Box 2</div>
                     </div>
+                    <!-- 나머지 슬라이드 -->
                 </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="../image/img_main_visual.png" alt="">
-                    <div class="tooltip">
-                        툴팁이다
-                    </div>
-                </div>
+                <!-- 네비게이션 버튼들 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
     </div>
-
     <style>
-        .container { position: relative;}
-        .swiper { background-color: blanchedalmond; position: relative;}
-        .swiper-slide { position: relative;}
-        .swiper-slide.active .tooltip { display: block;}
-        .tooltip { display: none; position: absolute; bottom: 10%; left: 50%; z-index: 2; min-width: 344px; height: 50px; background-color: pink;}
-        .swiper-slide:hover .tooltip { display: block;}
-        .swiper-button-prev, .swiper-button-next { top: auto; bottom: -10%;}
+        .wrap {
+            max-width: 400px;
+        }
+        .hover-box {
+            /* display: none; */
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            z-index: 1000;
+            width: 500px;
+            height: 50px;
+        }
+
+        .swiper-slide {
+            position: relative;
+            height: 400px;
+            background-color: red;
+        }
     </style>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
-    <script src="/common/js/ui.js"></script>
-
     <script>
-        var swiper = new Swiper('.container .swiper', {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-
         $(document).ready(function() {
-            $('.swiper-slide').on('mouseenter', function(event) {
-                const $item = $(this);
-                const $tooltip = $item.find('.tooltip');
-                const $swiperContainer = $('.swiper');
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 
-                $currentTooltip = $tooltip; // 현재 툴팁 저장
-
-                // 툴팁을 슬라이드 밖으로 이동
-                $swiperContainer.append($tooltip);
-
-                // 툴팁의 위치를 동적으로 조정
-                const itemRect = $item[0].getBoundingClientRect();
-                const containerRect = $swiperContainer[0].getBoundingClientRect();
-                const tooltipTop = itemRect.top - containerRect.top;
-                let tooltipLeft = itemRect.left - containerRect.left + itemRect.width * 0.1; // left: 10% 계산
-
-                // 툴팁이 컨테이너를 넘어가는지 확인
-                const tooltipRight = tooltipLeft + $tooltip.outerWidth();
-                if (tooltipRight > containerRect.width) {
-                tooltipLeft = containerRect.width - $tooltip.outerWidth();
-                }
-
-                $tooltip.css({
-                    top: tooltipTop + 'px',
-                    left: tooltipLeft + 'px',
-                    display: 'block'
-                });
-
-                console.log('mouseenter triggered'); // 로그 추가
+    $('.swiper-slide').hover(
+        function() {
+            var hoverBox = $(this).find('.hover-box');
+            $('body').append(hoverBox);
+            var offset = $(this).offset();
+            hoverBox.css({
+                display: 'block',
+                top: offset.top + $(this).height() / 2 - hoverBox.height() / 2,
+                left: offset.left + $(this).width()
             });
-
-            $('.swiper-slide').on('mouseleave', function(event) {
-                if ($currentTooltip) {
-                    const $item = $(this);
-
-                    // 툴팁을 다시 슬라이드 안으로 이동하고 숨기기
-                    console.log('mouseleave triggered'); // 로그 추가
-                    console.log('Before append:', $currentTooltip[0]); // 로그 추가
-                    $item.append($currentTooltip);
-                    console.log('After append:', $currentTooltip[0]); // 로그 추가
-                    $currentTooltip.css({
-                        display: 'none',
-                        top: '',
-                        left: ''
-                    });
-                    console.log('After hiding tooltip:', $currentTooltip[0]); // 로그 추가
-
-                    $currentTooltip = null; // 현재 툴팁 초기화
-                }
-            });
-        });
-
-    
+        },
+        function() {
+            var hoverBox = $(this).find('.hover-box');
+            $(this).append(hoverBox);
+            hoverBox.css('display', 'none');
+        }
+    );
+});
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="../common/js/ui.js"></script>
 </body>
 </html>
+
+
+<script>
+    // //메인 > 제품후기
+if ($('.review-swipe .swiper').length > 0) {
+    const reviewSwiper = new Swiper('.review-swipe .swiper', {
+        slidesPerView: '4',
+        spaceBetween: 0,
+        loop: false,
+        clickable: false,
+        observer: true,
+        observeParents: true,
+        // autoplay: {
+        //     delay: 6000,
+        // },
+        navigation: {
+            nextEl: ".review-swipe .swiper-button-next",
+            prevEl: ".review-swipe .swiper-button-prev",
+        },
+        breakpoints: {      
+            680: {
+              slidesPerView: 1,  //브라우저가 768보다 클 때
+            },        
+            960: {
+                slidesPerView: 3,  //브라우저가 768보다 클 때
+            },
+            1180: {
+                slidesPerView: 4,  //브라우저가 1024보다 클 때
+            },
+        },
+    });
+}
+
+let $currentTooltip = null; // 현재 활성화된 툴팁을 저장할 변수
+
+$('.review-swipe .swiper-slide').on('mouseenter', function(event) {
+    const $item = $(this);
+    const $tooltip = $item.find('.hover-box');
+    const $swiperContainer = $('.review-swipe .swiper');
+
+    $currentTooltip = $tooltip; // 현재 툴팁 저장
+
+    // 툴팁을 슬라이드 안으로 이동
+    $item.append($tooltip);
+
+    $(this).css('z-index', '100');
+
+    // 툴팁의 위치를 CSS 기준으로 설정 (기본적으로 컨테이너 넘어가지 않게 설정)
+    $tooltip.css({
+        left: '22%',
+    });
+
+    // 툴팁이 컨테이너를 넘어가는지 확인하고 슬라이드 기준으로 위치 조정
+    const containerRect = $swiperContainer[0].getBoundingClientRect();
+    const tooltipRect = $tooltip[0].getBoundingClientRect();
+    const slideRect = $item[0].getBoundingClientRect();
+
+    if (tooltipRect.right > containerRect.right) {
+        const newTooltipRight = slideRect.right - containerRect.right + 22; // 오른쪽에 10px 여백을 주어 붙임
+        $tooltip.css({
+        right: newTooltipRight + '%',
+        left: 'auto' // left 속성 제거
+        });
+    }    
+
+    console.log('mouseenter triggered'); // 로그 추가
+});
+
+$('.review-swipe .swiper-slide').on('mouseleave', function(event) {
+    const $item = $(this);
+    const mouseLeftContainer = event.relatedTarget && !$.contains($item[0], event.relatedTarget);
+
+    $(this).css('z-index', '1');
+
+    // 마우스가 컨테이너를 벗어났을 때 툴팁을 숨김
+    if ($currentTooltip && mouseLeftContainer) {
+            console.log('mouseleave triggered'); // 로그 추가
+            console.log('Before append:', $currentTooltip[0]); // 로그 추가
+            $item.append($currentTooltip);
+            console.log('After append:', $currentTooltip[0]); // 로그 추가
+            $currentTooltip.css({
+            right: '', // right 속성 초기화
+            left: '', // left 속성 초기화
+        });
+        console.log('After hiding tooltip:', $currentTooltip[0]); // 로그 추가
+
+        $currentTooltip = null; // 현재 툴팁 초기화
+    }
+});
+</script>
