@@ -279,7 +279,7 @@
         height: auto;
     }
     .main-brand .flagship .sub-col {
-        padding: 50px 0 10px 20px;
+        padding: 80px 0 10px 20px;
     }
     .main-brand .flagship .sub-col .flag-layout {
         margin-top: 50px;
@@ -289,7 +289,7 @@
 
     /*메인 > 브랜드 라인업*/
     .main-line-up .wrapper {
-        padding: 50px 20px;
+        padding: 80px 20px;
     }
     .main-line-up .swiper.mySwiper {
         display: none;
@@ -318,6 +318,9 @@
 
 
     /*메인 > 멤버십*/
+    .main-memebership {
+        padding: 80px 0;
+    }
     .main-memebership .banner {
         background-image: none;
     }
@@ -331,6 +334,91 @@
         height: 160px;
         right: 30px;
     }
+
+    /*메인 > 제품후기*/
+    .main-review {
+        padding-bottom: 80px;
+    }
+    .review-swipe .swiper-slide.down .review-list,
+    .review-swipe .swiper-slide.down2 .review-list {
+        margin-top: 0;
+    }
+    .review-swipe .indicator {
+        gap: 10px;
+    }
+    .review-swipe .swiper-button-prev::after,
+    .review-swipe .swiper-button-next::after {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    /*메인 > 글로벌 프로젝트*/
+    .main-global {
+        padding-bottom: 80px;
+    }
+    .movie-wrap {
+        flex-direction: column;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .main-global .section-info .link-btn {
+        position: relative;
+        justify-content: flex-end;
+    }
+    .movie-wrap .list {
+        display: none;
+    }
+    .movie-wrap iframe {
+        border-radius: 0;
+    }
+    .movie-wrap .movierSwiper2 {
+        width: 100%;
+    }
+    .movie-wrap .movierSwiper2 .indicator {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 8px;
+        padding-right: 20px;
+    }
+    .movie-wrap .movierSwiper2 .swiper-button-prev, 
+    .movie-wrap .movierSwiper2 .swiper-button-next {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        background-color: #E0E0E3;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    .movie-wrap .movierSwiper2 .swiper-button-prev::after, 
+    .movie-wrap .movierSwiper2 .swiper-button-next::after {
+        content: '';
+        background: url('../../image/ico_arrow_right_gray.svg') no-repeat center / contain;
+        display: block;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .movie-wrap .movierSwiper2 .swiper-button-prev::after {
+        transform: translate(-50%,-50%) rotate(-180deg);
+    }
+    .movie-wrap .movierSwiper2 .swiper-button-prev.disabled, 
+    .movie-wrap .movierSwiper2 .swiper-button-next.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }    
+
+
+
 }
 
 @media (max-width: 680px) {
@@ -568,6 +656,32 @@
     }
     .main-line-up .swiper.mySwiper2 .product-list-wrap .product .desc-box .shop-box {
         margin-top: 50px;
+    }
+
+
+    /*멤버십*/
+    .main-memebership .banner {
+        padding: 20px
+    }
+    .main-memebership .banner .desc-box .btn {
+        line-height: 32px;
+        padding: 0 18px;
+    }
+    .main-memebership .banner .card {
+        right: 20px;
+        padding: 14px;
+        width: 170px;
+        height: 100px;
+    }
+    .main-memebership .banner .card h2 {
+        font-size: var(--font-size-20);
+    }
+    .main-memebership .banner .card .desc em {
+        font-size: var(--font-size-12);
+    }
+    .main-memebership .banner .card .desc span {
+        font-size: var(--font-size-12);
+        line-height: 16px;
     }
 
 }

@@ -94,9 +94,9 @@ if ($('.banner-swipe .swiper').length > 0) {
         clickable: false,
         observer: true,
         observeParents: true,
-        // autoplay: {
-        //     delay: 6000,
-        // },
+        autoplay: {
+            delay: 5000,
+        },
         navigation: {
             nextEl: ".banner-swipe .swiper-button-next",
             prevEl: ".banner-swipe .swiper-button-prev",
@@ -113,9 +113,9 @@ if ($('.ev-banner .swiper').length > 0) {
         clickable: false,
         observer: true,
         observeParents: true,
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
         pagination: {
             el: ".ev-banner .swiper-pagination",
         },
@@ -155,9 +155,9 @@ var lineupSwiper = new Swiper(".main-line-up .mySwiper", {
   });
 var lineupSwiper2 = new Swiper(".main-line-up .mySwiper2", {
     spaceBetween: 10,
-    // autoplay: {
-    //     delay: 4000,
-    // },
+    autoplay: {
+        delay: 4000,
+    },
     navigation: {
         nextEl: ".main-line-up .swiper-button-next",
         prevEl: ".main-line-up .swiper-button-prev",
@@ -181,25 +181,25 @@ if ($('.review-swipe .swiper').length > 0) {
         clickable: false,
         observer: true,
         observeParents: true,
-        // autoplay: {
-        //     delay: 6000,
-        // },
+        autoplay: {
+            delay: 5000,
+        },
         navigation: {
             nextEl: ".review-swipe .swiper-button-next",
             prevEl: ".review-swipe .swiper-button-prev",
         },
         breakpoints: {     
             320: {
-              slidesPerView: 1,  //브라우저가 768보다 클 때
+              slidesPerView: 1,  
             },             
             680: {
-              slidesPerView: 2,  //브라우저가 768보다 클 때
+              slidesPerView: 2,  
             },        
             960: {
-                slidesPerView: 3,  //브라우저가 768보다 클 때
+                slidesPerView: 3,  
             },
             1180: {
-                slidesPerView: 4,  //브라우저가 1024보다 클 때
+                slidesPerView: 4,  
             },
         },
     });
@@ -257,30 +257,46 @@ $('.review-swipe .swiper-slide').on('mouseleave', function(event) {
     }
 });
 
-// const slides = $('.review-swipe .swiper-slide');
-// slides.hover(
-//     function() {
-//         slides.not(this).css('z-index', '-1');
-//     }, 
-//     function() {
-//         slides.css('z-index', '');
-//     }
-// );
-
 
 
 //메인 > 글로벌 프로젝트
-$('.main-global .movie-wrap .list li').on('click', function() {
-    // 클릭된 메뉴 아이템의 인덱스를 가져옴
-    var index = $(this).data('index');
-
-    $(this).addClass('current').siblings('li').removeClass('current');
-    // 모든 컨텐츠 박스에서 current 클래스 제거
-    $('.cont > div').removeClass('current');
-
-    // 클릭된 메뉴 아이템의 인덱스에 해당하는 컨텐츠 박스에 current 클래스 추가
-    $('#video-' + index).addClass('current');
+var movieSwiper = new Swiper(".movie-wrap .movierSwiper", {
+    spaceBetween: 12,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {          
+        320: {
+            slidesPerView: 1, 
+          },       
+          960: {
+              slidesPerView: 4,
+          },
+    },
+  });
+var movieSwiper2 = new Swiper(".movie-wrap .movierSwiper2", {
+    spaceBetween: 10,
+    effect : 'fade',
+    autoplay: {
+        delay: 5000,
+    },
+    navigation: {
+        nextEl: ".movierSwiper2 .swiper-button-next",
+        prevEl: ".movierSwiper2 .swiper-button-prev",
+    },
+    thumbs: {
+        swiper: movieSwiper,
+    },
 });
+$(window).resize(function(){resizeYoutube();});
+    $(function(){resizeYoutube();});
+    function resizeYoutube(){ $("iframe").each(function(){ 
+    if( /^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ){
+            $(this).css("width","100%"); 
+            $(this).css("height",Math.ceil( parseInt($(this).css("width")) * 480 / 854 ) + "px");
+        } 
+    }); 
+}
 
 
 /* mo > hambuger */
