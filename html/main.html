@@ -20,19 +20,23 @@
 <body>
     <div class="floating">
         <ul class="list">
-            <li class="members">
-                <a href="#">에싸 멤버십</a>
-                <div class="description"  name="popup1">
-                    <p><span class="color-gradient">에싸 멤버십</span>에 가입하여 다양한 혜택을 받아보세요</p>
-                    <input type="checkbox" name="today_close1" id="today_close1">
-                    <label for="today_close1" class="close"></label>
-                </div>
+            <li class="members hover">
+                <a href="#">
+                    <img src="/image/ico_float_members.svg" alt="">
+                    <div class="description"><p><span class="color-gradient">에싸 멤버십</span>에 가입하여 다양한 혜택을 받아보세요</p></div>
+                </a>
             </li>
-            <li class="event toggle">
-                <a href="#">이벤트</a>
+            <li class="event toggle hover">
+                <a href="#">
+                    <img src="/image/ico_float_gift.svg" alt="">
+                    <div class="description"><p>이벤트 페이지에서<br><strong>다양한 혜택</strong>을 확인해 보세요!</p></div>
+                </a>
             </li>
-            <li class="kakao toggle">
-                <a href="#">카카오톡</a>
+            <li class="kakao toggle hover">
+                <a href="#">
+                    <img src="/image/ico_float_kakao.svg" alt="">
+                    <div class="description"><p><strong>궁금한 점은 카카오톡</strong>으로<br>간편하게 문의해 보세요!</p></div>
+                </a>
             </li>
             <li class="btn-more">
                 <a href="javascript:;">
@@ -47,74 +51,104 @@
         </ul>
     </div>
 
-    <main class="main">
+    <div class="gnb-wrap">
         <div class="top-banner">
             <a href="#"><p>H사피엔스 멤버십 회원 '에싸'를 위한 <strong>첫 구매 10,000원 쿠폰팩</strong></p></a>
         </div>
-        <div class="gnb-wrap">
-            <div class="hamburger">
-                <input type="checkbox" name="toggleCheck">
-                <div class="bar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <div class="hamburger">
+            <input type="checkbox" name="toggleCheck">
+            <div class="bar">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <header>
-                <a href="#"><img src="../image/ico_H_logo.svg" alt=""></a>
-                <div class="header-menu-box">
-                    <ul class="header-menu">
-                        <li><a href="#">H사피엔스</a></li>
-                        <li><a href="#">헬퓨</a></li>
-                        <li><a href="#">공후하</a></li>
-                        <li>
-                            <a href="#">
-                                멤버십
-                                <div class="tool-tip">
-                                    <div class="inner">
-                                        <span>멤버십에 가입하고<br>다양한 혜택을 받아보세요</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li><a href="#">커뮤니티</a></li>
-                    </ul>
-                </div>
-                <ul class="sub-menu">
-                    <li class="search"><a href="#"><i class="ico search"></i></a></li>
-                    <li><a href="#"><i class="ico my"></i></a></li>
-                    <li><a href="#"><i class="ico cart"></i></a></li>
-                    <li><a href="#"><i class="ico globe"></i><span>KO</span></a></li>
-                    <li><a href="#"><i class="ico location"></i><span>매장안내</span></a></li>
-                </ul>
-            </header>
-            <div class="search-box">
+        </div>
+        <header>
+            <a href="#" class="logo"><img src="../image/ico_H_logo.svg" alt=""></a>
+            <div class="header-menu-box">
                 <div class="bg"></div>
-                <div class="box">
-                    <div class="inner">
-                        <div class="form-wrap">
-                            <input type="text" name="q" value="" id="sch_str" class="input" required="">
-                            <button type="submit" class="search-btn"><span class="search"></span></button>
-                        </div>                                
-                        <div class="hash-tag mg-top-20">
-                            <h4>추천 검색어</h4>
-                            <div class="tag-box mg-top-20">
-                                <a href="/shop/1624346854">#스킨</a>
-                                <a href="/shop/1624432492">#로션</a>
-                                <a href="/shop/1625119914">#미스트</a>
-                                <a href="/shop/list-1010">#에센스</a>
-                                <a href="/shop/list-1020">#마스크팩</a>
-                                <a href="/shop/1624346854">#스킨</a>
-                                <a href="/shop/1624432492">#로션</a>
-                                <a href="/shop/1625119914">#미스트</a>
-                                <a href="/shop/list-1010">#에센스</a>
-                                <a href="/shop/list-1020">#마스크팩</a>
+                <ul class="header-menu">
+                    <li>
+                        <a href="#">브랜드소개</a>
+                        <div class="depth-menu">
+                            <ul>
+                                <li><a href="#">H사피엔스</a></li>
+                                <li><a href="#">공후하</a></li>
+                                <li><a href="#">헬퓨</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">제품소개</a>
+                        <div class="depth-menu">
+                            <ul>
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">H사피엔스</a></li>
+                                <li><a href="#">공후하</a></li>
+                                <li><a href="#">헬퓨</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            멤버십
+                            <div class="tool-tip">
+                                <div class="inner">
+                                    <span>멤버십에 가입하고<br>다양한 혜택을 받아보세요</span>
+                                </div>
                             </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <div class="depth-menu">
+                            <ul>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">Q&A</a></li>
+                                <li><a href="#">고객센터</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" target="_blank">기업구매</a></li>
+                </ul>
+            </div>
+            <ul class="sub-menu">
+                <li class="search"><a href="#;"><i class="ico search"></i></a></li>
+                <li><a href="#"><i class="ico my"></i></a></li>
+                <li><a href="#"><i class="ico cart"></i></a></li>
+                <li><a href="#"><i class="ico globe"></i><span>KO</span></a></li>
+                <li><a href="#"><i class="ico location"></i><span>매장안내</span></a></li>
+            </ul>
+        </header>
+        <div class="search-box">
+            <div class="box">
+                <div class="inner">
+                    <div class="form-wrap">
+                        <input type="text" name="q" value="" id="sch_str" class="input" required="">
+                        <button type="submit" class="search-btn"><span class="search"></span></button>
+                    </div>                                
+                    <div class="hash-tag mg-top-20">
+                        <h4>추천 검색어</h4>
+                        <div class="tag-box mg-top-20">
+                            <a href="/shop/1624346854">#스킨</a>
+                            <a href="/shop/1624432492">#로션</a>
+                            <a href="/shop/1625119914">#미스트</a>
+                            <a href="/shop/list-1010">#에센스</a>
+                            <a href="/shop/list-1020">#마스크팩</a>
+                            <a href="/shop/1624346854">#스킨</a>
+                            <a href="/shop/1624432492">#로션</a>
+                            <a href="/shop/1625119914">#미스트</a>
+                            <a href="/shop/list-1010">#에센스</a>
+                            <a href="/shop/list-1020">#마스크팩</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <main class="main">
         <div class="kv-wrap">
             <div class="kv-etc">
                 <span>Human</span>
@@ -217,7 +251,7 @@
                         <li>
                             <a href="#">
                                 <p class="img-box"><img src="../image/ico_brand_logo_gong.svg" alt=""></p>
-                                <span>공후화</span>
+                                <span>공후하</span>
                             </a>
                         </li>
                     </ul>

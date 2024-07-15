@@ -38,6 +38,8 @@
     --transition-base : cubic-bezier(0,.48,.71,1.01);
     /* --transition-base : cubic-bezier(0,.48,.71,1.01); */
 
+    --body-min-width : 320px;
+
 }
 .wrapper{
     width: 100%;

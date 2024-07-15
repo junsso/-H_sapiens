@@ -83,6 +83,19 @@
     }
     .floating .description {
         min-width: 272px;
+        font-size: 12px;
+    }
+    .floating .list .description{
+        display: none !important;
+    }
+    .floating .list .hover:hover a{
+        width: 64px !important;
+        height: 64px !important;
+        gap: 0;
+        padding: 0;
+    }
+    .floating .list .members a:hover img{
+        display: block !important;
     }
 
     /*header*/ 
@@ -135,7 +148,11 @@
         display: none;
     } 
 
-    .main .header-menu-box {
+    header .bg{
+        display: none;
+    }
+
+    .header-menu-box {
         position: fixed;
         top: 37px;
         left: auto;
@@ -143,38 +160,78 @@
         bottom: 0;
         transform: translate(0);
         background: var(--bg-color-base);
-        /* background: pink; */
         width: 0;
         height: 100%;
-        padding: 65px 20px;
+        padding: 55px 0;
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-start;
         z-index: 100;
         border-top: 1px solid var(--color-guide);
-        /* display: none; */
         right: -100%;
         transition-property: var(--transition-base);
         transition-duration: 0.4s;
     }
-    .main .header-menu-box.active {
+    .header-menu-box.active {
         width: 100%;
         right: 0;
     }
-    .main .header-menu-box .header-menu {
+    .header-menu-box .header-menu {
         flex-direction: column;
         align-items: flex-end;
+        width: 100%;
+        gap: 0;
+        border-top: 1px solid var( --color-border);
     }
-    .main .header-menu-box .header-menu a {
+    .header-menu-box .header-menu > li {
+        width: 100%;
+        border-bottom: 1px solid var( --color-border);
+    }
+    .header-menu-box .header-menu > li > a {
         color: var(--color-base);
+        line-height: 1.4;
+        padding: 0;
+        text-align: right;
+        padding: 20px;
+    }
+    .header-menu-box .header-menu .depth-menu {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: translateX(0);
+        padding: 15px 20px;
+        background-color: #F9F9F9;
+        display: none;
+    }
+    .header-menu-box .header-menu .depth-menu ul {
+        align-items: flex-end;
+    }
+    .header-menu-box .header-menu .depth-menu a {
+        padding: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    .header-menu-box .header-menu .depth-menu a::after{
+        content: '';
+        display: block;
+        width: 10px;
+        height: 1px;
+        background-color: var(--color-base);
     }
 
-    .main header {
+    header {
         padding: 10px 20px;
         padding-right: 80px;
         overflow: hidden;
     }
-    .main header .sub-menu a span {
+    header .sub-menu a span {
+        display: none;
+    }
+    .header-menu-box .header-menu .tool-tip {
         display: none;
     }
 
@@ -424,27 +481,32 @@
 @media (max-width: 680px) {
     /*floating*/
     .floating .list a {
-        width: 40px;
-        height: 40px;
+        width: 40px !important;
+        height: 40px !important;
         margin: auto;
+        background-size: 20px;
     }
-    .floating .list .members a {
-        width: 50px;
-        height: 50px;
-        background-size: 34px;
+    .floating .description p {
+        text-align: center;
+    }
+    .floating .list a img {
+        width: 18px;
+    }
+    .floating .list .members a img {
+        width: 24px;
+    }
+    .floating .list .hover:hover a {
+        width: 40px !important;
+        height: 40px !important;
     }
     .floating .list .btn-more a span {
         width: 18px;
+        height: 2px;
     }
-    .floating .list .btn-more a span:last-of-type {
+    .floating .list .btn-more a span:last-of-type{
+        width: 2px;
         height: 18px;
     }
-    .floating .list a {
-        background-size: 18px;
-    }
-    /* .floating .list .btn-bottom a {
-        background-size: 18px;
-    } */
 
     /*header*/
     .hamburger {
@@ -468,13 +530,13 @@
         transform: translateY(4px) rotate(-45deg);
     }
 
-    .main header {
+    header {
         padding-right: 55px;
     }
-    .main header .sub-menu {
+    header .sub-menu {
         gap: 0;
     }
-    .main header .sub-menu .ico {
+    header .sub-menu .ico {
         width: 34px;
         height: 34px;
     }
