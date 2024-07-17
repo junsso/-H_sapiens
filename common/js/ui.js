@@ -28,26 +28,12 @@ $(window).resize(function() {
 //scroll시 header
 $(window).on('scroll', function() {
     if($(window).scrollTop() > 0) {
-        $('.gnb-wrap').addClass('revers');
-        $('.header-menu-box').on({
-            "mouseover" : function(){
-                $('.gnb-wrap').addClass('revers');
-            },
-            "mouseout" : function(){
-                $('.gnb-wrap').addClass('revers');
-            }
-        })
+        $('.gnb-wrap').addClass('revers');  
     } 
     else {
-        $('.gnb-wrap').removeClass('revers');
-        $('.header-menu-box').on({
-            "mouseover" : function(){
-                $('.gnb-wrap').addClass('revers');
-            },
-            "mouseout" : function(){
-                $('.gnb-wrap').removeClass('revers');
-            }
-        })
+        $('.gnb-wrap').removeClass('revers');      
+        $('header .depth-menu').stop().slideUp();
+        $('header .bg').stop().slideUp();
     } 
 });
 
